@@ -288,14 +288,20 @@ namespace Electricity.Content.Block.Entity {
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder stringBuilder) {
             base.GetBlockInfo(forPlayer, stringBuilder);
 
-            if (this.Contents != null) {
-                var temp = (int)this.Contents.Collectible.GetTemperature(this.Api.World, this.Contents);
-
-                stringBuilder.AppendLine(
-                    temp <= 25
-                        ? $"\nContents: {this.Contents.StackSize}x {this.Contents.GetName()}\nTemperature: {Lang.Get("Cold")}"
-                        : $"\nContents: {this.Contents.StackSize}x {this.Contents.GetName()}\nTemperature: {temp}°C"
-                );
+            if (this.Contents != null)
+            {
+                var temp = (int)Contents.Collectible.GetTemperature(Api.World, Contents);
+                stringBuilder.AppendLine();
+                if (temp <= 25)
+                {
+                    stringBuilder.AppendLine(Lang.Get("Contents") + Contents.StackSize + "×" +
+                                             Contents.GetName() +
+                                             "\n└ " + Lang.Get("Temperature") + Lang.Get("Cold"));
+                }
+                else
+                    stringBuilder.AppendLine(Lang.Get("Contents") + Contents.StackSize + "×" +
+                                             Contents.GetName() +
+                                             "\n└ " + Lang.Get("Temperature") + temp + "°C");
             }
         }
 

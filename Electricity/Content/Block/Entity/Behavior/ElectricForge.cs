@@ -2,6 +2,7 @@ using System.Text;
 using Electricity.Interface;
 using Electricity.Utils;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 
 namespace Electricity.Content.Block.Entity.Behavior {
     public class ElectricForge : BlockEntityBehavior, IElectricConsumer {
@@ -29,8 +30,8 @@ namespace Electricity.Content.Block.Entity.Behavior {
             base.GetBlockInfo(forPlayer, stringBuilder);
 
             stringBuilder.AppendLine(StringHelper.Progressbar(this.powerSetting));
-            stringBuilder.AppendLine("├ Consumption: " + this.powerSetting + "/" + 100 + "⚡   ");
-            stringBuilder.AppendLine("└ Temperature: " + this.maxTemp + "° (max.)");
+            stringBuilder.AppendLine("├ " + Lang.Get("Consumption") + this.powerSetting + "/" + 100 + "⚡   ");
+            stringBuilder.AppendLine("└ " + Lang.Get("Temperature") + this.maxTemp + "° (max.)");
             stringBuilder.AppendLine();
         }
     }

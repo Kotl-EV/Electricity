@@ -7,5 +7,13 @@
   "block-switch-*": "Schalter",
   "block-lamp-*": "Elektrische Lampe",
   "block-forge": "Elektrische Schmiede",
-  "block-heater-*": "Elektrische Heizung"
+  "block-heater-*": "Elektrische Heizung",
+
+  "game:Electricity": "Electricity",
+  "game:Storage": "Storage: ",
+  "game:Temperature": "Temperatur: ",
+  "game:Consumption": "Verbrauch: ",
+  "game:Production": "Produktion: ",
+  "game:Overflow": "Überlauf: ",
+  "game:Contents": "Inhalt: "
 }

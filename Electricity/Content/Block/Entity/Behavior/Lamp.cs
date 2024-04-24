@@ -2,6 +2,7 @@ using System.Text;
 using Electricity.Interface;
 using Electricity.Utils;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 
 namespace Electricity.Content.Block.Entity.Behavior {
     public class Lamp : BlockEntityBehavior, IElectricConsumer {
@@ -46,7 +47,7 @@ namespace Electricity.Content.Block.Entity.Behavior {
             base.GetBlockInfo(forPlayer, stringBuilder);
 
             stringBuilder.AppendLine(StringHelper.Progressbar(this.LightLevel * 100.0f / 8.0f));
-            stringBuilder.AppendLine("└ Consumption: " + this.LightLevel + "/" + 8 + "⚡   ");
+            stringBuilder.AppendLine("└ "+ Lang.Get("Consumption") + this.LightLevel + "/" + 8 + "⚡   ");
             stringBuilder.AppendLine();
         }
     }

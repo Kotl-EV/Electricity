@@ -2,6 +2,7 @@ using System.Text;
 using Electricity.Interface;
 using Electricity.Utils;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.Util;
 
@@ -100,14 +101,14 @@ namespace Electricity.Content.Block.Entity.Behavior {
             var networkInformation = this.System?.GetNetworks(this.Blockentity.Pos, this.Connection);
 
             stringBuilder
-                .AppendLine("Electricity")
+                .AppendLine(Lang.Get("Electricity"))
                 // .AppendLine("├ Number of consumers: " + networkInformation?.NumberOfConsumers)
                 // .AppendLine("├ Number of producers: " + networkInformation?.NumberOfProducers)
                 // .AppendLine("├ Number of accumulators: " + networkInformation?.NumberOfAccumulators)
                 // .AppendLine("├ Block: " + networkInformation?.NumberOfBlocks)
-                .AppendLine("├ Production: " + networkInformation?.Production + "⚡   ")
-                .AppendLine("├ Consumption: " + networkInformation?.Consumption + "⚡   ")
-                .AppendLine("└ Overflow: " + networkInformation?.Overflow + "⚡   ");
+                .AppendLine("├ " + Lang.Get("Production") + networkInformation?.Production + "⚡   ")
+                .AppendLine("├ " + Lang.Get("Consumption") + networkInformation?.Consumption + "⚡   ")
+                .AppendLine("└ " + Lang.Get("Overflow") + networkInformation?.Overflow + "⚡   ");
         }
 
 

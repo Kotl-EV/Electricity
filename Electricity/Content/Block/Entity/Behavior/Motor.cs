@@ -5,6 +5,7 @@ using Electricity.Interface;
 using Electricity.Utils;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent.Mechanics;
@@ -178,7 +179,7 @@ namespace Electricity.Content.Block.Entity.Behavior {
             base.GetBlockInfo(forPlayer, stringBuilder);
 
             stringBuilder.AppendLine(StringHelper.Progressbar(this.powerSetting));
-            stringBuilder.AppendLine("└ Consumption: " + this.powerSetting + "/" + 100 + "⚡   ");
+            stringBuilder.AppendLine("└ "+ Lang.Get("Consumption") + this.powerSetting + "/" + 100 + "⚡   ");
             stringBuilder.AppendLine();
         }
     }
