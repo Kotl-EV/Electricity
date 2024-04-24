@@ -1,6 +1,7 @@
 using System.Text;
 using Electricity.Interface;
 using Electricity.Utils;
+using ElectricityUnofficial.Utils;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
@@ -13,7 +14,7 @@ namespace Electricity.Content.Block.Entity.Behavior {
         }
 
         public int GetMaxCapacity() {
-            return 16000;
+            return AttributeGetter.GetAttributeInt(this.Block, "maxcapacity", 16000);
         }
 
         public int GetCapacity() {
